@@ -19,8 +19,14 @@ exports.addBook = function(req,res,next) {
 		res.end("1")
 	})
 }
-
 exports.editBook = function(req,res,next) {
-	res.render("editBook")
-}
 
+}
+exports.editBookView = function(req,res,next) {
+	Book.findBookByName(req.query,function(err,result){
+		if (err) {
+			console.log(err);
+		}
+		res.render("editBook",{book:result[0]})
+	}
+}

@@ -21,7 +21,7 @@
 			<td><%=books[i].author%></td>
 			<td><%=books[i].category%></td>
 			<td><%=books[i].price%></td>
-			<td><a href="/editBook">操作</a></td>
+			<td><a href="/editBookView?bookName=<%=books[i].bookName%>">操作</a></td>
 		</tr>
 		<%}%>
 		
